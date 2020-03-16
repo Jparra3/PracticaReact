@@ -1,6 +1,7 @@
 import React from 'react'
 import Wellcome from '../components/welcome'
 import MyPageList from '../components/MyPageList'
+import BottonPlus from '../components/BottonPlus'
 
 class MyPage extends React.Component{
 
@@ -40,7 +41,7 @@ class MyPage extends React.Component{
             <div>
                 <Wellcome username="Hailie Davis"/>
                 <MyPageList myPage={this.state.data}/>
-                
+                <BottonPlus />
             </div>
         )
     }

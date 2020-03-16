@@ -12,8 +12,10 @@
 // serviceWorker.unregister();
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MyPage from './pages/MyPage';
+import 'bootstrap/dist/css/bootstrap.css';
 
-const user = {
+ /* const user = {
     name: 'Jhonatan',
     lastName: 'Parra Almario',
     avatar: 'http://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png',
@@ -42,8 +44,13 @@ const element =
         <br />
         {getGreeting()}
     </div>
+ */
 
-const container = document.getElementById('root')
+const container = document.getElementById('root') 
+
+
 
 // ReactDOM.render(QUE,DONDE)
-ReactDOM.render(element,container)
+ReactDOM.render(
+    <MyPage />
+,container)

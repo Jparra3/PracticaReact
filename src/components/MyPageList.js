@@ -1,12 +1,11 @@
 import React from 'react'
 import Card from './card'
 
-
-function MyPageList(props){
-    return (
-        <div>
+// aplicando ES6
+const MyPageList = ({myPage}) => (
+    <div>
             {
-                props.myPage.map((myPage) => {
+                myPage.map((myPage) => {
                     return (
 
                         <Card key = {myPage.id}
@@ -22,7 +21,13 @@ function MyPageList(props){
             }
             
         </div>
-    )
-}
+) 
+
+// //sin aplicar ES6
+// function MyPageList(props){
+//     return (
+        
+//     )
+// }
 
 export default MyPageList

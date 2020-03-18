@@ -12,8 +12,8 @@
 // serviceWorker.unregister();
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyPage from './pages/MyPage';
 import 'bootstrap/dist/css/bootstrap.css';
+import App from './components/App'
 
  /* const user = {
     name: 'Jhonatan',
@@ -52,5 +52,5 @@ const container = document.getElementById('root')
 
 // ReactDOM.render(QUE,DONDE)
 ReactDOM.render(
-    <MyPage />
+    <App />
 ,container)

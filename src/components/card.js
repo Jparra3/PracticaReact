@@ -13,34 +13,9 @@ class Card extends React.Component{
     componentDidMount(){
         setTimeout(() => {
             this.setState({
-                img: 'https://cdn3.iconfinder.com/data/icons/one-piece-flat/48/Cartoons__Anime_One_Piece_Artboard_37-512.png'
+                img: 'https://cdn0.iconfinder.com/data/icons/accounting-31/64/accounting-income-coin-token-512.png'
             })
-        }, 1000)
-
-        setTimeout(() => {
-            this.setState({
-                img: 'https://cdn2.iconfinder.com/data/icons/dragonball-z-colored/48/Cartoons__Anime_Dragonball_Artboard_4-512.png'
-            })
-        }, 2000)
-
-        setTimeout(() => {
-            this.setState({
-                img: 'https://cdn2.iconfinder.com/data/icons/dragonball-z-colored/48/Cartoons__Anime_Dragonball_Artboard_2-512.png'
-            })
-        }, 3000)
-
-        setTimeout(() => {
-            this.setState({
-                img: 'https://cdn2.iconfinder.com/data/icons/dragonball-z-colored/48/Cartoons__Anime_Dragonball_Artboard_3-512.png'
-            })
-        }, 4000)
-
-        setTimeout(() => {
-            this.setState({
-                img: 'https://cdn2.iconfinder.com/data/icons/dragonball-z-colored/48/Cartoons__Anime_Dragonball_Artboard_13-512.png'
-            })
-        }, 5000)
-
+        }, 1500)
     }
 
     render(){

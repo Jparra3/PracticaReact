@@ -7,14 +7,12 @@ const MyPageList = ({myPage}) => (
             {
                 myPage.map((myPage) => {
                     return (
-
                         <Card key = {myPage.id}
                             title={myPage.title}
                             description={myPage.description}
-                            image={myPage.img}
+                            img={myPage.img}
                             leftColor={myPage.leftColor}
                             rightColor={myPage.rightColor}
-                    
                         />
                     )
                 })

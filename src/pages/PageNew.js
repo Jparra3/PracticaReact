@@ -4,7 +4,13 @@ import Card from '../components/card'
 
 class PageNew extends React.Component{
     state = {
-        form: {}
+        form: {
+            title: '',
+            description:'',
+            img:'',
+            leftColor:'',
+            rightColor:''
+        }
     }
 
     handleSubmit = e => {
@@ -31,12 +37,13 @@ class PageNew extends React.Component{
         return(
             <div className="row">
                 <div className="col-sm">
-                    <Card />
+                    <Card {...this.state.form} />
                 </div>
                 <div className="col-sm">
                     <PageForm 
                         onChange={this.handleChange}
                         form={this.state.form}
+                        onSubmit={this.handleSubmit}
                     />   
                 </div>
                  

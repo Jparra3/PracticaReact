@@ -8,18 +8,13 @@ class PageForm extends React.Component{
     //     // }
     //     this.handleClick = this.handleClick.bind(this)
     // }
-    state = {}
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log(this.state)
-    }
 
     render(){
-        const {onChange, form} = this.props
+        const {onChange, form, onSubmit} = this.props
 
         return(
             <div className="container">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <input 
                         type="text" 

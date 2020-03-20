@@ -2,6 +2,9 @@ import React from 'react'
 import Wellcome from '../components/welcome'
 import MyPageList from '../components/MyPageList'
 import BottonPlus from '../components/BottonPlus'
+import Agencies from '../components/Agencies'
+import Loading from '../components/Loading'
+import Toast from '../components/Toast'
 
 class MyPage extends React.Component{
 
@@ -29,16 +32,48 @@ class MyPage extends React.Component{
                 "leftColor": "#FAD961",
                 "rightColor": "#F76B1C"
             }
-        ]
+        ],
+        dataAgencies:[],
+        loading:true,
+        error: null
+    }
+
+    async componentDidMount(){
+        await this.fethcMyPage();
+    }
+
+    fethcMyPage = async () => {
+        try {
+            let res = await fetch('https://oficina.comfamiliarhuilavirtual.com/dist/assets/general-data/definition.json')
+            let data = await res.json()
+            this.setState({
+                dataAgencies:data.agencias,
+                loading: false
+            
+            })
+            console.log(this.state);
+        } catch (error) {
+            this.setState({
+                loading:false, 
+                error:error
+            })
+            console.log(error)
+            Toast(`Ocurrió un error (${error})`,false)
+        }
     }
 
     render(){
-
+        if(this.state.loading){
+            return <Loading />
+        }
         return (
             <div>
                 <Wellcome username="Hailie Davis"/>
                 <MyPageList myPage={this.state.data}/>
+
+                <Agencies agencias={this.state.dataAgencies} />
                 <BottonPlus />
+
             </div>
         )
     }

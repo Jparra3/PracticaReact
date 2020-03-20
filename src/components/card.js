@@ -22,7 +22,7 @@ class Card extends React.Component{
         const {title,description,img,leftColor,rightColor} = this.props
         return (
         <div className="card mx-auto Fitness-Card"
-            style={{marginBottom:'5%', backgroundImage: `url(${img}), linear-gradient(to right, ${leftColor}, ${rightColor})`}}
+            style={{marginBottom:'5%', backgroundImage: `url(${img}), linear-gradient(to right, ${leftColor || '#000'}, ${rightColor || '$FFF'})`}}
         >
             <div className="card-body">
                 <div className="row center">

@@ -1,6 +1,8 @@
 import React from 'react'
 import PageForm from '../components/PageForm'
 import Card from '../components/card'
+import Toast from '../components/Toast'
+import { wait } from '@testing-library/react'
 
 class PageNew extends React.Component{
     state = {
@@ -13,9 +15,28 @@ class PageNew extends React.Component{
         }
     }
 
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log(this.state)
+    handleSubmit = async e => {
+        e.preventDefault();
+        Toast(this.state.form.title)
+        // console.log(this.state)
+        
+        try {
+            let config = {
+                method: 'POST',
+                headers: {
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({idAplication:1,typeId:'T'})
+            }
+
+            let res = await fetch('https://oficina.comfamiliarhuilavirtual.com/index.php/api/transversal-security/list-all-user',config)
+            let json = await res.json();
+
+            console.log(json);
+        } catch (error) {
+            
+        }
     }
 
     //enlazar eventos
@@ -31,6 +52,8 @@ class PageNew extends React.Component{
                 [e.target.name]: e.target.value
             }
         })
+
+        
     }
 
     render(){
